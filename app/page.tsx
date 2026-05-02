@@ -3,7 +3,7 @@ export default function Home() {
     <div>
       <p>hi</p>
       <p>
-        <a href="/ide">runtime ide</a>
+        <a href="https://ide.fabioibanez.com">runtime ide</a>
       </p>
     </div>
   );
