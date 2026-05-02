@@ -1,0 +1,19 @@
+// Workers Static Assets config: tells wrangler to upload `out/` (the
+// `next build` static export) and serve it directly. No Worker script,
+// no SSR, no OpenNext.
+//
+// Without this file, wrangler's auto-detection sees Next.js in package.json
+// and runs the OpenNext SSR migration, which expects a server bundle that
+// `output: 'export'` doesn't produce — that's the build that was failing.
+//
+// Project name "website" matches the existing Cloudflare project. If you
+// rename the project in the dashboard, update `name` here.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "website",
+  "compatibility_date": "2026-05-02",
+  "assets": {
+    "directory": "./out",
+    "not_found_handling": "404-page"
+  }
+}
