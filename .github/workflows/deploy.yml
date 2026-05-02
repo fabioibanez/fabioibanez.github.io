@@ -28,11 +28,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build
-        run: npm run build
-      
-      - name: Copy CNAME
-        run: cp CNAME ./out/CNAME
+      # Use the "full" build so out/ includes the LLVM compiler assets that
+      # `@jtrb/runtime` fetches from https://fabioibanez.github.io/website/.
+      # Cloudflare uses plain `npm run build` instead, so its out/ stays under
+      # the 25 MiB-per-file Workers Static Assets limit.
+      - name: Build (with LLVM assets)
+        run: npm run build:gh
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

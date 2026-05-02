@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:gh": "next build && cp -R gh-pages-assets/. out/",
     "start": "next start"
   },
   "dependencies": {
