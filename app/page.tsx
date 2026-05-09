@@ -1,9 +1,9 @@
 export default function Home() {
   return (
     <div>
-      <p>hi</p>
+      <p>welcome</p>
       <p>
-        <a href="https://ide.fabioibanez.com">runtime ide</a>
+        <a href="https://debugger.sh">Check out this ide!</a>
       </p>
     </div>
   );
